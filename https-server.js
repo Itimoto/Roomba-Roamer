@@ -1,15 +1,17 @@
+// Note: For the SSL route, you'll need to generate your own SSL certificates.
+
 const express       = require("express");
 const spdy          = require("spdy");
 const http          = require("http");
 const path          = require("path");
 const fs            = require("fs");
 
-const ROOMBAROAMER  = path.join(__dirname + "/public/projects", "rr.html");
+const ROOMBAROAMER  = path.join(__dirname + "/public/projects", "rr-https.html");
 
 // Custom Imports
 const WSSRouter     = require('./lib/gen/wssRouter');
 
-const RoombaServer  = require('./lib/rr/_rr-server');
+const RoombaServer  = require('./lib/rr/_rr-server-https');
 
 // Express App Boilerplate
 var app = express();
@@ -34,7 +36,6 @@ const server = spdy.createServer(options, app);
 WSSRouter.initialize(server);
 
 const roomba = new RoombaServer(server);
-PongServer.initialize({ssl: true});
 
 server.listen(443, (error) => {
     if(error) {

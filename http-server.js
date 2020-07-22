@@ -2,12 +2,9 @@ const express       = require("express");
 const http          = require("http");
 const path          = require("path");
 
-const ROOMBAROAMER  = path.join(__dirname + "/public/projects", "rr.html");
+const ROOMBAROAMER  = path.join(__dirname + "/public", "rr-http.html");
 
-// Custom Imports
-const WSSRouter     = require('./lib/gen/wssRouter');
-
-const RoombaServer  = require('./lib/rr/_rr-server');
+const RoombaServer  = require('./lib/rr/_rr-server-http');
 const piStreamPORT = 8083;
 const commPORT = 8082;
 
@@ -20,10 +17,12 @@ app.use(express.static(__dirname + '/vendor/dist'));     // For the h264 Player
 
 // Set Up Routes for Primary Server:
 app.get('/', function (req, res) {
+    console.log("Got request");
     res.sendFile(ROOMBAROAMER);
 });
 
 const server = http.createServer(app); // for HTTP: (Legacy)
-const roomba = new RoombaServer(server, {commPORT: commPORT, piStreamPORT: piStreamPORT);
+const roomba = new RoombaServer(server, {commPORT: commPORT, piStreamPORT: piStreamPORT});
 
+console.log("Listening on Port: 80");
 server.listen(80);  // Start listening on HTTP's Default port
