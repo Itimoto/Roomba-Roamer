@@ -313,6 +313,41 @@ const portName  = "/dev/ttyAMA0";
 
 </details>
 
+Finally, run the program.
+```
+node roomba-pi-http.js
+```
+*Or `roomba-pi-https.js`. Y'know.*
+
+<details>
+<summary>
+What about running it in the background?
+</summary>
+
+You'll need a Supervisor for that. I use PM2.
+
+Install PM2
+
+```
+$ npm install -g pm2
+```
+
+To run it in the background:
+
+```
+$ pm2 start roomba-pi-http.js
+```
+
+To run it on startup:
+
+```
+$ pm2 startup roomba-pi-http.js
+```
+
+Y'know.
+
+</details>
+
 ---
 ## Credit Where Credit Is Due.
 This project would not have been possible without other, external contributions. Though I'm unsure as to whether to cite them as *contributors* or *vendors*, here lie the external libraries used:
