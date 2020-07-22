@@ -58,8 +58,8 @@ If you'd like to deploy it to a Server/VPS, you'll have a little more to do. I'v
 > *"Two roads diverged in a yellow wood."* ~ *The Road Not Taken*, by Robert Frost
 
 <details>
-    <summary>You can implement with HTTP or HTTPS, but you'll need SSL Certificates for the latter. The methods for implementation are slightly different.</summary>
-    <p>
+<summary>You can implement with HTTP or HTTPS, but you'll need SSL Certificates for the latter. The methods for implementation are slightly different.</summary>
+<p>
     
     You will need SSL Certificates for an HTTPS app. I used [Certbot](https://certbot.eff.org/)
 
@@ -71,7 +71,7 @@ If you'd like to deploy it to a Server/VPS, you'll have a little more to do. I'v
 
     That is the reasoning behind the `WSSRouter`, after all.
 
-    </p>
+</p>
 </details>
 
 ### Both Server-Side Implementations:
@@ -91,8 +91,8 @@ $ npm install
 ```
 
 <details>
-    <summary>For HTTPS:</summary>
-    <p>
+<summary>For HTTPS:</summary>
+<p>
 
     Move your SSL Certs into the SSL Folder. If you used [Let's Encrypt with Certbot](https://certbot.eff.org/) and are running a Unix-based OS, you can just run:
 
@@ -105,7 +105,7 @@ $ npm install
 
     Alternatively, do what feels right. I'm not your supervisor.
 
-    </p>
+</p>
 </details>
 
 Now, start the server:
