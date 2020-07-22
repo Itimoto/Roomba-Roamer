@@ -6,7 +6,7 @@ const http          = require("http");
 const path          = require("path");
 const fs            = require("fs");
 
-const ROOMBAROAMER  = path.join(__dirname + "/public/projects", "rr-https.html");
+const ROOMBAROAMER  = path.join(__dirname + "/public", "rr-https.html");
 
 // Custom Imports
 const WSSRouter     = require('./lib/gen/wssRouter');
