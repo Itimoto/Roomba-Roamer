@@ -65,13 +65,9 @@ You can implement with HTTP or HTTPS, but you'll need SSL Certificates for the l
 
 You will need SSL Certificates for an HTTPS app. I used [Certbot](https://certbot.eff.org/)
 
-I built the Roamer as an HTTP app, originally; however, I migrated it to HTTPS/SPDY for better load times and better SEO.
+I built the Roamer as an HTTP app, originally; however, I migrated it to HTTPS/SPDY for better load times and better SEO. At the same time, implementing HTTP is *quite* a bit simpler than HTTPS. But there is *still* a difference.
 
-At the same time, implementing HTTP is *quite* a bit simpler than HTTPS. But there is *still* a difference.
-
-That's why I've explicitly named the files `http-(component).(js/html)` — so that it's easier to see the difference, *and* to better know how to migrate multiple 'plain/insecure' WebSocket instances to 'WebSocketSecure' instances on HTTPS.
-
-That is the reasoning behind the `WSSRouter`, after all.
+That's why I've explicitly named the files `http-(component).(js/html)` — so that it's easier to see the difference, *and* to better know how to migrate multiple 'plain/insecure' WebSocket instances to 'WebSocketSecure' instances on HTTPS. That's the reasoning behind the `WSSRouter`, after all.
 
 </details>
 
