@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Roomba Roamer!</title>
+    <meta 
+      name="viewport" 
+      content="width=device-width, initial-scale=1.0">
+
+    <meta
+      name="description"
+      content="Control a Roomba over the Internet! Built with NodeJS, an Old Raspberry Pi, and a Teardrop of Sweat.">
+  
+      
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="./styles/pong.css">
+    <link rel="stylesheet" type="text/css" href="./styles/roomba-roamer.css">
+
+    <link rel="icon" type="image/png" href="../images/rr_moon.png" sizes="32x32">
+  </head>
+  <body>
+
+    
+
+    <div class="center-feed-container" width=100% height=100%>
+      <!-- <canvas id="pongCanvas"></canvas> -->
+      <canvas class="h264-Window" style="opacity: 0"></canvas>
+    </div>
+
+    <div class="side-column" style="left: 0; opacity: 0; justify-content: space-between;">
+      <div class="callout-title">
+        Roomba <br>
+        Roamer
+      </div>
+      <div class="side-column" style="position: relative; width: 100%;justify-content: flex-end;">
+        <button class="button-rr" id="button-menu">Info</button>   
+        <button class="button-rr" id="button-back">Back</button>  
+      </div>    
+    </div>
+
+    <div class="side-column" style="right: 0; opacity: 0">
+      <div class="callout-side" id="status-indic">
+
+        In Line... <!-- Default / Unassigned Text -->
+
+      </div>
+
+     <!-- <canvas id="joystick"></canvas><!-- width=100vw height=100vh></canvas>
+      -->
+    </div>
+
+    <!-- Provide WSAvcPlayer -->
+    <script type="text/javascript" src="http-live-player.js"></script>
+    <!-- Provide Clientside Scripts -->
+    <script type="text/javascript" src="../general.js"></script>
+    <script type="module" src="/scripts/index-rr.js"></script>
+
+    <!-- If attempting to Minify/WebPack the scripts; TODO.
+    <script type="text/javascript" src="../general.js"></script>
+    <script type="module" src="./scripts/bundle-rr.js"></script>
+    -->
+  </body>
+</html>

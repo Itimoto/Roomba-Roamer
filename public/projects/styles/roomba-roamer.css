@@ -1,0 +1,81 @@
+/* h264 Decoder Canvas Options */
+.h264-Window {
+
+    /*border: 1px solid #7F57FC;
+    */
+    /*background-color: #8C8C8B;*/
+    background-color: inherit;
+    
+    width: 100%;
+    /*object-fit: cover;  /* Crops the inside to the Parent Container's Aspect Ratio */
+
+}
+
+#joystick {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+/*
+    position: absolute;
+*/
+    bottom: -35%;
+    position: relative;
+    /* DELETE THIS AFTER DEBUGGING */
+    opacity: .5;
+}
+
+.button-rr {
+    width: 80%;
+    height: 15%;
+/*
+    font-size: 40px;
+*/
+
+    margin: 2%;
+
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px;
+
+    background: #2c282b;
+    color: #FFFFFF;
+    font-family: 'Josefin Sans', sans-serif;
+
+    text-align: center;
+
+    transition: all 1s ease-in;
+}
+
+/* Medium Devices: Tablets and whatnot */
+@media only screen and (min-width: 768px) {
+    #joystick {
+        bottom: -40%;
+    }
+    
+    .button-rr {
+        height: 7%;
+        /*
+        font-size: 20px;
+        */
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .h264-Window {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #joystick {
+        bottom: -10%;
+    }
+    
+    /*
+    .button-rr {
+        width: 80%;
+        height: 7%;
+
+        font-size: initial;
+    }
+    */

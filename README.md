@@ -10,15 +10,9 @@ Control a Roomba over the Web!
 
 > Currently running over on [potato.irish](https://famine.potato.irish/rr)
 
-You may be wondering about what *exactly* is going on here.
-
->(Heh. Like you'll get a straight answer)   
-
-I carved out two months of my life to bring you this... *thing*. It's a [Roomba](https://www.irobot.com/). You know them -- those funky little fellas that they are. That doesn't really explain what's happening here, however...
-
 ---
 
-## How To *Roam*
+## How To *Roam* (If you're here for the Fun)
 The premise is simple: By the end, here, you'll have moved a little robot in my room. So, bear with me:
 There is a Queue to control the Roomba -- your spot in line is indicated by the text in the Top-Right Corner:
    1) `You're Up!` -- You're Up. Your keyboard/screen's connected to the Roomba, giving you the reins for a *solid 30 seconds*
@@ -50,3 +44,7 @@ You'll be greeted with a standard screen. The in-game details are in the in-game
 > `PlayerX: Waiting` -- I got you a partner, and they may/may-not-have hit the 'Ready' button yet. Even if you hit 'Ready', you're not guaranteed that the Other Player has hit 'Ready' already. Alrighty?
 > `PlayerX: You` -- You are PlayerX. This'll give you a hint on ***where*** you are on the gamescreen.
 > `Button: Ready` -- For our purposes here, it 'lets the server know you're ready'. It doesn't, really, on the backend. It's deceptive, like the price of post-secondary education. But it's something. I'm very tired.
+
+---
+
+## How to Implement the Roomba Roamer (If you're here for the *real* Fun)

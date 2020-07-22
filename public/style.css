@@ -1,0 +1,649 @@
+/* Import Fonts... */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+:root {
+    --body-bg: #0a0908;
+}
+
+html, body {
+
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--body-bg, #141314);
+    /*background-color: #202336;*/
+    font-family: 'Lato', sans-serif; /* Default font */
+}
+
+
+/*  // For debugging 
+* {
+    border-color: red;
+    border-style: solid;
+}
+*/
+
+
+/* Container for the Pi feed */
+.center-feed-container {
+
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    z-index: 0;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.markdown-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*
+    background-color: inherit #c5c5c538;
+    */
+    background-color: #5a2f131a;
+    opacity: 1;
+
+    transition: 1s all;
+}
+.markdown-container iframe {
+    width: 88%;
+    height: 85%;
+}
+
+.fg-item {
+    width: 90vw;
+    position: absolute;
+
+    top: 20%;
+
+    animation: float 10s infinite ease-in-out alternate;
+
+    transition: all .4s ease-in-out; 
+}
+/*
+.fg-item:hover {
+    box-shadow: 0px 0px 10px white;
+    width: 91vw;
+}
+*/
+
+.bg-item {
+    width: 150%;
+    height: 150%;
+    position: absolute;
+
+    object-fit: cover;
+
+    animation: float 30s infinite ease-in-out alternate-reverse;
+    
+    transition: all .4s ease-in-out;
+}
+
+.potato-launcher {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: 0;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.potato-launcher:first-child{
+    flex-grow: 2;
+
+    filter: blur(0px);
+    transform: scale(1);
+}
+.potato-launcher:first-child{
+    flex-grow: 2;
+    
+    filter: blur(0px);
+    transform: scale(1);
+}
+
+/* Middle Child Selector */
+.potato-launcher *:not(:first-child):not(:last-child) {
+    /*
+    flex-shrink: 1;
+    */
+    transform: scale(0.6);
+    filter: blur(1px);
+
+    align-self: flex-start;
+}
+/*
+.potato-launcher .potato-container:nth-child(even){
+    filter: blur(2px);
+
+    transform: scale(1.1);
+
+    align-self: flex-end;
+}
+*/
+
+.potato-container {
+    /*
+    height: 100%;
+    width: 20%;
+    
+    z-index: 1;
+    */
+    top: 0%;
+    /*background-color: #FBFBFB;
+    box-shadow: 0 0 5px #FBFBFB;
+    */
+    /*overflow-x: hidden; /* Disable horizontal scroll */
+    flex-grow: 1;
+
+    /* Flexbox Configuration; hella helpful tutorial over at https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    justify-content: center;
+}
+
+.side-item {
+    width: 100%;
+
+    opacity: 0; /* By default */
+
+    animation: float 30s infinite ease-in-out alternate-reverse;
+    
+    transition: all .4s ease-in-out;
+}
+
+/* Left-Side Informational Column */
+.side-column {
+
+    height: 100%;
+    width: 40%;
+    /*
+    position: fixed;
+    z-index: 1;
+    */
+    position: absolute;
+    top: 0;
+    /*background-color: #FBFBFB;
+    box-shadow: 0 0 5px #FBFBFB;
+    */
+    overflow-x: hidden; /* Disable horizontal scroll */
+
+    /* Flexbox Configuration; hella helpful tutorial over at https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+}
+
+.side-column * {
+
+    border: none;
+    margin-bottom: 1%;
+    -webkit-border-radius: 2px;
+
+    text-align: center;
+    align-content: space-between;
+
+    transition: opacity 1s ease-in-out;
+
+}
+/*
+.top-orient {
+    top: 0%;
+    right: 0%;
+
+    height: 30%;
+    width: 30%;
+}
+
+.bottom-orient {
+    bottom: 0%;
+
+    height: 30%;
+    width: 30%;
+}
+*/
+
+/* For Mobile Phones and (in general)*/
+[class*="callout"] {
+    height: 22%;
+    width: 92%;
+    margin: 10%;
+    margin-top: 5%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #FBFBFB;
+
+    font-size: 11vw;
+    font-family: 'Josefin Sans', sans-serif;
+
+    /* Prevents Selection; For Mobile UI */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.callout-title {
+
+    /*
+    height: 22%;
+    width: 92%;
+    margin: 10%;
+    margin-top: 5%;
+    /**/
+    font-size: 8vw;
+    
+    background-color: #202336;
+}
+
+.callout-side {
+
+    /* Similar to .header-square, but with a generalized format */
+    /*height: 25%;
+    width: 90%;*/
+
+    /*
+    height: 25%;
+    width: 90%;
+    margin: 10%;
+    margin-top: 5%;
+    */
+
+    background-color: #709455;
+    font-weight: bold;
+}
+
+/* UI Elements */
+
+[class*="button"] {
+    border: 0;
+    
+    background-color: #8d643e;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 0px 0px 12px 2px #c5c5c538;
+	border-radius: 28px;
+    
+    border: 1px solid #f0eddd;
+	cursor: pointer;
+	text-shadow: 0px 1px 0px #8d8a7b;
+
+    color: #F0EDDD;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 40px;
+
+    text-align: center;
+    text-justify: center;
+    line-height: 10%; /* Basic Approach; helps center-vertically for one line */
+    padding: 0px;
+
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.button-potato {
+    width: 60vw;
+    height: 10vh;
+
+    background: transparent;
+    border-radius: 0px;
+    
+    opacity: 0; /* Fade it in on loading */
+    text-anchor: middle;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+
+    position: absolute;
+
+    /*
+    bottom: 10%;
+    */
+
+    transition: all 0.4s;
+}
+/* Deferring potato-button hover to in-site js */
+
+.button-side {
+    min-width: 30vw;
+    height: 5vh; 
+    opacity: 0; 
+
+    font-size: 20px;
+
+    border: 1px;
+    border-radius: 0px;
+    border-bottom: transparent;
+    border-top: transparent;
+    border-left: thin solid;
+    border-right: thin solid;
+
+    font-style: oblique;
+
+    background: transparent;
+}
+
+.button {
+    width: 80%;
+    height: 5%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+}
+
+/****************** Compatibility Media-Only Section *****************/
+
+@media only screen and (orientation: landscape) {
+    /* For Desktop */
+    .bg-item {
+        width: 120%;
+    }
+    
+    .fg-item {
+        width: 25vw;
+    }/*
+    .fg-item:hover {
+        width: 26vw;
+    }*/
+/*
+    .top-orient {top: 0%; right: 5%; height: 90%;}
+    .bottom-orient {top: 0%; left: 5%; height: 90%;}
+*/
+    [class*="button"] {
+        font-size: 15px;
+    }
+    .button-potato {
+        max-width: 20vw;
+        max-height: 10vh;
+        bottom: 20%;
+
+        font-size: 30px;
+    }
+    .button-side {
+        min-width: 18vw;
+        min-height: 8vh; 
+
+        margin: 10%;
+    }
+    .button-rr {
+        width: 80%;
+        height: 7%;
+
+        font-size: initial;
+    }
+
+    .side-column {
+        height: 100%;
+        width: 20%;
+    }
+
+    [class*="callout"]{
+        height: 40%;
+        width: 92%;
+
+        font-size: 4.1vw;
+    }
+
+    .callout-title {
+        height: 22%;
+        width: 92%;
+        margin: 10%;
+        margin-top: 5%;
+    }
+
+    .callout-side {
+        height: 25%;
+        width: 90%;
+        margin: 10%;
+        margin-top: 5%;
+    }
+}
+/* Medium Devices -- Landscape tablets, etc. */
+@media only screen and (min-width: 768px) {
+    #stars-img {
+        content: url("./images/png/stars-med.png");
+    }
+
+    #tater-img {
+        content: url("./images/png/potatoe-med.png");
+    }
+
+    #tomato-img {
+        content: url("./images/png/tomato.png");
+    }
+
+    [class*="button"] {
+        font-size: 25px;
+    }
+    .button-potato {
+        font-size: 40px;
+    }
+}
+@media only screen and (min-width: 768px) and (orientation: landscape){
+    .side-column {
+        width: 30%;
+    }
+}
+
+/* Larger Devices -- Laptops/desktops, etc. */
+@media only screen and (min-width: 992px) {
+    #stars-img {
+        content: url("./images/webp/stars.webp");
+    }
+
+    #tater-img {
+        content: url("./images/webp/potatoe.webp");
+    }
+
+    [class*="button"] {
+        font-size: 25px;
+    }
+    .button-potato {
+        font-size: 40px;
+    }
+}
+@media only screen and (min-width: 992px) and (orientation: landscape){
+    .side-column {
+        width: 30%;
+    }
+
+    #stars-img {
+        content: url("./images/png/stars-med.png");
+    }
+
+    #tater-img {
+        content: url("./images/webp/potatoe.webp");
+    }
+}
+
+/* Biggest; larger laptops & desktops */
+@media only screen and (min-width: 1200px) {
+    [class*="button"] {
+        font-size: 35px;
+    }
+    .button-potato {
+        font-size: 60px;
+    }
+}
+@media only screen and (min-width: 1200px) and (orientation: landscape){
+    .side-column {
+        width: 20%;
+    }
+    /*
+    [class*="button"] {
+        font-size: 80px;
+    }
+    .button-potato {
+        font-size: 100px;
+    }
+    */
+
+    #stars-img {
+        content: url("./images/png/stars-med.png");
+    }
+    #tater-img {
+        content: url("./images/webp/potatoe.webp");
+    }
+}
+
+/* Unconventional Method of Detecting iOS Mobile, Which /Doesn't/ Support WebP Images */
+@supports (-webkit-touch-callout: none){
+    [class*="button"] {
+        cursor: none;
+    }
+}
+
+/* Another Method of Detecting /safari and other (mobile) Apple Devices/ */
+@media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0){
+    #stars-img {
+        content: url("./images/png/stars-min.png");
+    }
+
+    #tater-img {
+        content: url("./images/png/potatoe-min.png");
+    }
+    #pong-img {
+        content: url("./images/png/potatoe-min.png");
+    }
+    #robo-img {
+        content: url("./images/png/potatoe-min.png");
+    }
+    #abt-img {
+        content: url("./images/png/potatoe-min.png");
+    }
+
+    #tomato-img {
+        content: url("./images/png/tomato-min.png");
+    }
+
+    #clone-img {
+        content: url("./images/png/about-page-min.png");
+    }
+}
+
+
+/********************* Animations *********************/
+/* Simple Fade-in/Fade-out */
+.fade-in {
+    -webkit-animation: fade 1s steps(90) forwards;
+    -moz-animation: fade 1s steps(90) forwards;
+    -o-animation: fade 1s steps(90) forwards;
+    animation: fade 1s steps(90) forwards;
+}
+
+.fade-out {
+    -webkit-animation: fade 1s steps(90) reverse;
+    -moz-animation: fade 1s steps(90) reverse;
+    -o-animation: fade 1s steps(90) reverse;
+    animation: fade 1s steps(90) reverse;
+}
+
+@keyframes fade {
+    from { opacity: 0.0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes fade {
+    from { opacity: 0.0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes fade {
+    from { opacity: 0.0; }
+    to { opacity: 1; }
+}
+@-o-keyframes fade {
+    from { opacity: 0.0; }
+    to { opacity: 1; }
+}
+
+/* Stationary Parallax Jiggle */
+.fg-float {
+    -webkit-animation: float 30s steps(90) forwards;
+    -moz-animation: float 30s steps(90) forwards;
+    -o-animation: float 30s steps(90) forwards;
+    animation: float 30s steps(90) forwards;
+}
+.bg-float {
+    -webkit-animation: float 30s steps(90) backwards;
+    -moz-animation: float 30s steps(90) backwards;
+    -o-animation: float 30s steps(90) backwards;
+    animation: float 30s steps(90) backwards;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    20% {
+        transform: translate(2%, -1%);
+    }
+    40% {
+        transform: translate(-3%, 2%);
+    }
+    80% {
+        transform: translate(0%, 1%);
+    }
+    100% {
+        transform: translate(4%, 5%);
+    }
+}
+@-webkit-keyframes float {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    20% {
+        transform: translate(2%, -1%);
+    }
+    40% {
+        transform: translate(-3%, 2%);
+    }
+    80% {
+        transform: translate(0%, 1%);
+    }
+    100% {
+        transform: translate(4%, 5%);
+    }
+}
+@-moz-keyframes float {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    20% {
+        transform: translate(4%, -2%);
+    }
+    40% {
+        transform: translate(-6%, 4%);
+    }
+    80% {
+        transform: translate(0%, 2%);
+    }
+    100% {
+        transform: translate(8%, 7%);
+    }
+}

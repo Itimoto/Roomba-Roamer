@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', serif;
+}
+
+.button-pong {
+    width: 22%;
+    height: 12%;
+
+    right: 5%;
+    bottom: 10%;
+
+    font-size: 1.3em;
+
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px;
+
+    background: #202336;
+    color: #FFFFFF;
+    font-family: 'Press Start 2P', Lato, sans-serif;
+
+    transition: all 1s ease-in;
+
+    position: absolute;
+}
+
+@media only screen and (orientation: landscape) {
+    .button-pong {  /* See: pong.css */
+        width: 13%;
+        height: 7%;
+
+        bottom: 5%;
+        right: initial;
+
+        font-size: initial;
+    }
+}
