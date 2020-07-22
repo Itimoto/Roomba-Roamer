@@ -7,3 +7,4 @@
 #  privkey.pem
 
 /node_modules
+/_pi-specific/node_modules
