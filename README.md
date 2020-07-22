@@ -324,7 +324,7 @@ node roomba-pi-http.js
 What about running it in the background?
 </summary>
 
-You'll need a Supervisor for that. I use PM2.
+You'll need a Supervisor for that. I use [PM2](https://medium.com/@andrew.nease.code/set-up-a-self-booting-node-js-eb56ebd05549).
 
 Install PM2
 
