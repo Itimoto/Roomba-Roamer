@@ -104,6 +104,16 @@ $ sudo cp /etc/letsencrypt/live/${your.domain.here}/chain.pem chain.pem
 Alternatively, do what feels right. I'm not your supervisor.
 </details>
 
+<details>
+<summary>
+For HTTP:
+</summary>
+
+Instead of explicitly routing our WebSocket connections through Port 443 (HTTPS) or Port 80 (HTTP), we'll be routing them through Ports 8083 (for the Pi Stream) and 8082 (for general-communication (e.g. Movement commands, Queue information, etc.))
+That means that we'll need to modify our firewall a little bit. If the Pi doesn't connect to the Server, you'll want to *open ports 8083 and 8082 on the server*
+
+</details>
+
 Now, start the server:
 ```
 $ cd ..
