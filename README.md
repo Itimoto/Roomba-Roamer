@@ -62,17 +62,16 @@ If you'd like to deploy it to a Server/VPS, you'll have a little more to do. I'v
 You can implement with HTTP or HTTPS, but you'll need SSL Certificates for the latter. The methods for implementation are slightly different.
 </summary>
 
-<p>  
-    You will need SSL Certificates for an HTTPS app. I used [Certbot](https://certbot.eff.org/)
+You will need SSL Certificates for an HTTPS app. I used [Certbot](https://certbot.eff.org/)
 
-    I built the Roamer as an HTTP app, originally; however, I migrated it to HTTPS/SPDY for better load times and better SEO.
+I built the Roamer as an HTTP app, originally; however, I migrated it to HTTPS/SPDY for better load times and better SEO.
 
-    At the same time, implementing HTTP is *quite* a bit simpler than HTTPS. But there is *still* a difference.
+At the same time, implementing HTTP is *quite* a bit simpler than HTTPS. But there is *still* a difference.
 
-    That's why I've explicitly named the files `http-(component).(js/html)` — so that it's easier to see the difference, *and* to better know how to migrate multiple 'plain/insecure' WebSocket instances to 'WebSocketSecure' instances on HTTPS.
+That's why I've explicitly named the files `http-(component).(js/html)` — so that it's easier to see the difference, *and* to better know how to migrate multiple 'plain/insecure' WebSocket instances to 'WebSocketSecure' instances on HTTPS.
 
-    That is the reasoning behind the `WSSRouter`, after all.
-</p>
+That is the reasoning behind the `WSSRouter`, after all.
+
 </details>
 
 ### Both Server-Side Implementations:
@@ -95,20 +94,16 @@ $ npm install
 <summary>
 For HTTPS:
 </summary>
-<p>
+ Move your SSL Certs into the SSL Folder. If you used [Let's Encrypt with Certbot](https://certbot.eff.org/) and are running a Unix-based OS, you can just run:
 
-    Move your SSL Certs into the SSL Folder. If you used [Let's Encrypt with Certbot](https://certbot.eff.org/) and are running a Unix-based OS, you can just run:
+```
+$ cd ssl
+$ sudo cp /etc/letsencrypt/live/${your.domain.here}/cert.pem cert.pem
+$ sudo cp /etc/letsencrypt/live/${your.domain.here}/privkey.pem privkey.pem
+$ sudo cp /etc/letsencrypt/live/${your.domain.here}/chain.pem chain.pem
+```
 
-    ```
-    $ cd ssl
-    $ sudo cp /etc/letsencrypt/live/${your.domain.here}/cert.pem cert.pem
-    $ sudo cp /etc/letsencrypt/live/${your.domain.here}/privkey.pem privkey.pem
-    $ sudo cp /etc/letsencrypt/live/${your.domain.here}/chain.pem chain.pem
-    ```
-
-    Alternatively, do what feels right. I'm not your supervisor.
-
-</p>
+Alternatively, do what feels right. I'm not your supervisor.
 </details>
 
 Now, start the server:
