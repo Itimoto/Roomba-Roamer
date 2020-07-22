@@ -1,7 +1,7 @@
 // WS Stream Imports & Variables; Callbacks under Video Streaming Section
 const WebSocket = require('ws');
 const spawn     = require('child_process').spawn;
-var Leaky       = require('./leakyBuffer');
+var Leaky       = require('./lib/leakyBuffer');
 
 //-----WS URLs----
 const hostName = "famine.potato.irish";
@@ -20,7 +20,7 @@ const videoParameters = {
 //-----Serial Imports------
 const SerialPort= require('serialport');
 var ReadLine    = SerialPort.parsers.Readline;
-const op        = require('./roomba-opcodes');  // Makes writing commands easier
+const op        = require('./lib/roomba-opcodes');  // Makes writing commands easier
 
 const portName  = "/dev/ttyAMA0";
 var roombaPort;
