@@ -5,7 +5,7 @@ const path          = require("path");
 const ROOMBAROAMER  = path.join(__dirname + "/public", "rr-http.html");
 
 const RoombaServer  = require('./lib/rr/_rr-server-http');
-const piStreamPORT = 8084;
+const piStreamPORT = 8083;
 const commPORT = 8082;
 
 // Express App Boilerplate

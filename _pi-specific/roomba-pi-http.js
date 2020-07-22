@@ -6,7 +6,7 @@ var Leaky       = require('./lib/leakyBuffer');
 //-----WS URLs----
 const hostName  = "famine.potato.irish";
 //const hostName = "192.168.0.191";
-const piStreamPort = 8084;
+const piStreamPort = 8083;
 const commPort  = 8082;
 
 var   streamURL = `ws://${hostName}:${piStreamPort}`;
