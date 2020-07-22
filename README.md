@@ -59,6 +59,7 @@ If you'd like to deploy it to a Server/VPS, you'll have a little more to do. I'v
 
 <details>
 <summary>
+
 You can implement with HTTP or HTTPS, but you'll need SSL Certificates for the latter. The methods for implementation are slightly different.
 </summary>
 
@@ -94,7 +95,8 @@ $ npm install
 <summary>
 For HTTPS:
 </summary>
- Move your SSL Certs into the SSL Folder. If you used [Let's Encrypt with Certbot](https://certbot.eff.org/) and are running a Unix-based OS, you can just run:
+
+Move your SSL Certs into the SSL Folder. If you used [Let's Encrypt with Certbot](https://certbot.eff.org/) and are running a Unix-based OS, you can just run:
 
 ```
 $ cd ssl
