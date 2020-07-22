@@ -5,7 +5,7 @@ const path          = require("path");
 const ROOMBAROAMER  = path.join(__dirname + "/public", "rr-http.html");
 
 const RoombaServer  = require('./lib/rr/_rr-server-http');
-const piStreamPORT = 8083;
+const piStreamPORT = 8084;
 const commPORT = 8082;
 
 // Express App Boilerplate
@@ -17,7 +17,6 @@ app.use(express.static(__dirname + '/vendor/dist'));     // For the h264 Player
 
 // Set Up Routes for Primary Server:
 app.get('/', function (req, res) {
-    console.log("Got request");
     res.sendFile(ROOMBAROAMER);
 });
 
