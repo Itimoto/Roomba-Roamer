@@ -59,6 +59,7 @@ If you'd like to deploy it to a Server/VPS, you'll have a little more to do. I'v
 
 <details>
     <summary>You can implement with HTTP or HTTPS, but you'll need SSL Certificates for the latter. The methods for implementation are slightly different.</summary>
+    <p>
     
     You will need SSL Certificates for an HTTPS app. I used [Certbot](https://certbot.eff.org/)
 
@@ -69,6 +70,8 @@ If you'd like to deploy it to a Server/VPS, you'll have a little more to do. I'v
     That's why I've explicitly named the files `http-(component).(js/html)` — so that it's easier to see the difference, *and* to better know how to migrate multiple 'plain/insecure' WebSocket instances to 'WebSocketSecure' instances on HTTPS.
 
     That is the reasoning behind the `WSSRouter`, after all.
+
+    </p>
 </details>
 
 ### Both Server-Side Implementations:
@@ -89,7 +92,8 @@ $ npm install
 
 <details>
     <summary>For HTTPS:</summary>
-    
+    <p>
+
     Move your SSL Certs into the SSL Folder. If you used [Let's Encrypt with Certbot](https://certbot.eff.org/) and are running a Unix-based OS, you can just run:
 
     ```
@@ -100,6 +104,8 @@ $ npm install
     ```
 
     Alternatively, do what feels right. I'm not your supervisor.
+
+    </p>
 </details>
 
 Now, start the server:
