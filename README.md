@@ -398,7 +398,7 @@ Oh, dear sweet heavens. So many. I'll make a list:
 ## Credit Where Credit Is Due.
 This project would not have been possible without other, external contributions. Though I'm unsure as to whether to cite them as *contributors* or *vendors*, here lie the external libraries used:
 
-- * __[@131's](https://github.com/131)__ [H264 Live Player](https://github.com/131/h264-live-player)*
-- * __[@PimTerry's](https://github.com/pimterry)__ [H264 Header-Data Capture Script](https://github.com/pimterry/raspivid-stream/blob/master/index.js)*
-- * __[@ey3ball's](https://github.com/ey3ball)__ [Leaky Buffer, coupled with neat exploration and explanation of Stream Backpressuring](http://ey3ball.github.io/)*
+- __[@131's](https://github.com/131)__ [H264 Live Player](https://github.com/131/h264-live-player)
+- __[@PimTerry's](https://github.com/pimterry)__ [H264 Header-Data Capture Script](https://github.com/pimterry/raspivid-stream/blob/master/index.js)
+- __[@ey3ball's](https://github.com/ey3ball)__ [Leaky Buffer, coupled with neat exploration and explanation of Stream Backpressuring](http://ey3ball.github.io/)
 - And the remaining *remarkably helpful* tutorials linked to when applicable.
