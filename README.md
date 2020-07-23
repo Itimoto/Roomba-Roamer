@@ -172,7 +172,9 @@ A Roomba's Serial Interface Port Looks something like this:
 ```
 
 > Hook up Pin 4 (TXD) on the Roomba to Pin 10 (RX) on the Pi (Yes Voltage Divider)
+
 > Pin 3 (RXD) on the Roomba to Pin 8  (TX) on the Pi (No Voltage Divider)
+
 > And, if you need to change the Baudrate with a pin, hook up Pin 5 (BRC) on the Roomba to a spare GPIO pin on the Pi.
 
 (Use the [documentation](http://anrg.usc.edu/ee579/spring2016/Roomba/iRobot_Roomba_600_Open_Interface_Spec.pdf) to fill in the blanks)
@@ -188,6 +190,10 @@ My setup runs something like this:
 ```
 [Roomba TXD] => 10k Resistor => [Pi RXD] => 22k Res. => GND
 ```
+
+And looks something like this:
+<img src="https://raw.githubusercontent.com/Itimoto/Potato.Irish-Server/master/public/images/jpg/roomba-roamer-wiring.jpg" 
+alt="The Roomba Wiring" />
 
 **Don't smoke your electronics.**
 
@@ -267,9 +273,9 @@ const portName  = "/dev/ttyAMA0";
 
 </details>
 
----
-
 </details>
+
+---
 
 <details>
 <summary>
@@ -350,6 +356,35 @@ $ pm2 startup roomba-pi-http.js
 Y'know.
 
 </details>
+
+---
+## Commentary
+It's what started [Famine.Potato.Irish](https://github.com/Itimoto/Potato.Irish-Server), it's what started [Pong](https://github.com/Itimoto/Potato.Irish-Server), and it's what happily constituted the vast majority of my summer.
+The Roamer is nothing more than a Roomba hooked up to `potato.irish`, giving users the ability to control a tiny robot in my home. 
+To be sure, the idea's not original. My exact implementation, however, might be. But the point remains that I didn't just build it for *myself* or to *learn*, but for the chance to interact with friends and family one more time before leaving for College.
+#### Challenges
+Oh, dear sweet heavens. So many. I'll make a list:
+- Debugging in *Entirely Unfamiliar Territory*
+    - I had *zero* experience with NodeJS, Networking, Streaming, etc.
+    - I had a *faint* idea of the Roamer infrastructure, but didn't know where to start.
+    - I limited myself to the [Node JS Documentation](https://nodejs.org/en/docs/) as often as possible, but certain topics left me looking on the forums
+- Interfacing with the Roomba
+    - Thankfully, there's a helpful [guide](https://www.irobot.lv/uploaded_files/File/iRobot_Roomba_500_Open_Interface_Spec.pdf) for Opcodes and interfacing
+- Streaming Low-Latency Video from a remote location
+    - This... this took by *far* the most time to implement and refine.
+    - I ended up using [131's H264-Live-Player](https://github.com/131/h264-live-player) implementation for streaming
+    - Then, issues arose with multiple-viewers -- the h264 format only sent Initializing Metadata at the beginning of the stream
+- Optimizing for Low-Latency Communication
+    - Backpressuring in Streams
+    - Managing Memory Leaks (including those in external NPM Modules)
+    - The multi-week debugging session against Latency-increases over time haunts me to this day
+- Working with Asynchronous Operations
+    - I knew very little about JS, starting the Roamer. In turn, concepts like `Promises` or `Async/Await` or other aspects of working with the JS Event Loop were foreign, but required for handling linked Communication and Streaming
+- Improving Project Reach / SEO ('Search Engine Optimization')
+    - Migrating the Node Server to HTTPS/SPDY with [Let's Encrypt](https://letsencrypt.org/)
+    - Developing Cross-Platform UI and Support
+        - 'Mobile First' Approaches
+- And more. So, so much more.
 
 ---
 ## Credit Where Credit Is Due.
