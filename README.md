@@ -47,7 +47,7 @@ First, you'll need your prerequisites:
     - [Raspberry Pi](https://www.raspberrypi.org/) (Current Implentation is running Raspbian on a Pi Model 2B)
         - Something to Power your Pi (e.g. Battery, Extension Cord + Power Brick, Bluetooth Speaker...)
         - A [Pi Camera Module](https://www.raspberrypi.org/products/camera-module-v2/)
-    - Some Basic Electronics
+    - Some Basic Electronics and Electronics Basics
         - A few Male-Male [jumper wires](https://www.amazon.com/Breadboard-Jumper-Wire-75pcs-pack/dp/B0040DEI9M)
         - A [Breadboard](https://www.amazon.com/EL-CP-003-Breadboard-Solderless-Distribution-Connecting/dp/B01EV6LJ7G/ref=sr_1_5?dchild=1&keywords=breadboard&qid=1595453103&sr=8-5)
         - A 10k Resistor and a 22k [Resistor](https://www.amazon.com/Resistor-Assorted-Resistors-Assortment-Experiments/dp/B07L851T3V/ref=sr_1_3?dchild=1&keywords=resistor+pack&qid=1595453238&sr=8-3)
@@ -182,7 +182,7 @@ A Roomba's Serial Interface Port Looks something like this:
 **NOTE! Pay extra-careful attention to hooking those two confused lovebirds up.**
 If you mix up the TX and RX on the Roomba and Pi, you'll fry the Pi due to the Logic Voltage Difference (as the Roomba uses 5V Serial Logic, Pi uses 3.3V Serial Logic)
 
-So, when you /do/ hook them up, use a voltage divider to step down the Roomba's Serial TX (5v) to Pi's RX (3v)
+So, when you /do/ hook them up, use a [voltage divider](https://learn.sparkfun.com/tutorials/voltage-dividers/all) to step down the Roomba's Serial TX (5v) to Pi's RX (3v)
 
 The Roomba /can/ detect the Pi's 3v TX, though, so you can hook it up directly there
 
