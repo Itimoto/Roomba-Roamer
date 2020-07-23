@@ -192,8 +192,16 @@ My setup runs something like this:
 ```
 
 And looks something like this:
+
 <img src="https://raw.githubusercontent.com/Itimoto/Potato.Irish-Server/master/public/images/jpg/roomba-roamer-wiring.jpg" 
 alt="The Roomba Wiring" />
+
+> **R**ed is for the Pi's Serial **R**eceiver. Hence the Voltage Divider (20k Ohm to Ground, 11k Ohm to the Roomba's (*Red*) Transmission Pin)
+
+> *Brown* is for the Pi's Serial *Transmission* (Hooked up directly with the *Blue* Wire)
+
+> *Yellow* is for the Pi's Ground Pin. So is *Black*
+
 
 **Don't smoke your electronics.**
 
