@@ -267,6 +267,8 @@ const portName  = "/dev/ttyAMA0";
 
 </details>
 
+---
+
 </details>
 
 <details>
@@ -308,6 +310,7 @@ const op        = require('./lib/roomba-opcodes');  // Makes writing commands ea
 
 const portName  = "/dev/ttyAMA0";
 ```
+---
 
 </details>
 
